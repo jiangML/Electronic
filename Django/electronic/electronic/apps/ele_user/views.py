@@ -1,3 +1,11 @@
-from django.shortcuts import render
+# -*- coding:utf-8 -*-
+from django.http import JsonResponse, Http404
+from django.views.generic import View
 
-# Create your views here.
+
+class EleUser(View):
+
+    def get(self, request, *args, **kwargs):
+        a = 'test'
+        b = 'hehe'
+        return JsonResponse({"test": a, "hehe": b})

@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 """
 Django settings for electronic project.
 
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'electronic.apps.ele_user',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -106,16 +108,17 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+TE_FORMAT = 'Y-m-d'
 
-USE_I18N = True
-
-USE_L10N = True
+TIME_ZONE = 'Asia/Shanghai'
+# 是否开启国际化支持，不开启时可以加载翻译模块优化
+USE_I18N = False
+# 本地化模式支持,为True使用系统的local设置显示数字，时间等格式
+USE_L10N = False
+# 是否设置Etag，设置Etag可以降低网络的开销， 但是会增加服务器的性能开销
+USE_ETAGS = False
 
 USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
